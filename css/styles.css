@@ -787,11 +787,12 @@ h3,
 
     .nav-links a {
         padding: 16px 0;
-        border-bottom: 1px solid #292929;
+        border-bottom: 1px solid #ffffff;
     }
 
     .nav-links a:last-child {
         border-bottom: 0;
+        
     }
 
     .menu-button.is-open span:nth-child(1) {
