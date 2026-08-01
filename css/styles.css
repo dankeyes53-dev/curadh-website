@@ -60,7 +60,7 @@ h3,
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #020202;
     font-weight: bold;
     text-decoration: none;
 }
@@ -792,7 +792,7 @@ h3,
 
     .nav-links a:last-child {
         border-bottom: 0;
-        
+
     }
 
     .menu-button.is-open span:nth-child(1) {
@@ -854,7 +854,7 @@ h3,
 .section-intro {
     max-width: 700px;
     margin: 24px 0 48px;
-    color: #cfcfcf;
+    color: #2b2b2b;
     font-size: 1.15rem;
     line-height: 1.7;
 }
@@ -874,6 +874,7 @@ h3,
 .benefit-card h3 {
     margin-top: 0;
     font-size: 1.4rem;
+    color: #b5121b;
 }
 
 .benefit-card p {
