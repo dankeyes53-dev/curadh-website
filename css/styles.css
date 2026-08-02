@@ -60,7 +60,7 @@ h3,
 }
 
 .nav-links a {
-    color: #ececec;
+    color: #000000;
     font-weight: bold;
     text-decoration: none;
 }
@@ -854,7 +854,7 @@ h3,
 .section-intro {
     max-width: 700px;
     margin: 24px 0 48px;
-    color: #2b2b2b;
+    color: #7c7b7b;
     font-size: 1.15rem;
     line-height: 1.7;
 }
