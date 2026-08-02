@@ -30,9 +30,53 @@ if (menuButton && navLinks) {
     });
 }
 
+// Copyright year
+
 const currentYear = document.querySelector("#current-year");
 
 if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
 }
 
+// Contact form submission
+
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
+
+if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector(".form-button");
+        const formData = new FormData(contactForm);
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        formStatus.textContent = "";
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("The form could not be submitted.");
+            }
+
+            formStatus.textContent =
+                "Thanks! Your message has been sent to the coach.";
+
+            contactForm.reset();
+        } catch (error) {
+            formStatus.textContent =
+                "Sorry, there was a problem sending your message.";
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Send Enquiry";
+        }
+    });
+}
