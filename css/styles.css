@@ -16,6 +16,8 @@ body {
     font-family: "Inter", sans-serif;
     color: #ffffff;
     background-color: #111111;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h1,
@@ -681,7 +683,14 @@ h3,
     }
     .benefits-grid {
         grid-template-columns: 1fr;
+        width: 100%;
     }
+
+    .benefit-card {
+        width: 100%;
+        min-width: 0;
+    }
+
 
     .benefits-section {
         padding: 72px 0;
@@ -890,12 +899,21 @@ h3,
 }
 
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 14px;
+
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .benefit-card {
+    flex: 0 0 82%;
+    min-width: 0;
+    scroll-snap-align: start;
     padding: 28px;
     background-color: #1b1b1b;
     border-top: 4px solid #b5121b;
