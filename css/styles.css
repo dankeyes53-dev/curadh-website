@@ -53,7 +53,9 @@ h3,
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex: 1;
+    min-width: 0px;
 }
 
 .nav-links {
@@ -61,7 +63,7 @@ h3,
     gap: 24px;
     margin-left: 40px;
     position: relative;
-    top: 3px;
+    top: 2px;
 }
 
 .nav-links a {
@@ -560,9 +562,10 @@ h3,
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .footer-brand p {
@@ -637,7 +640,10 @@ h3,
 
 .club-banner {
     height: 40px;
-    width: auto;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -649,6 +655,9 @@ h3,
 
     .club-banner {
         display: block;
+        width: 100%;
+        max-width: 170px;
+        height:auto;
     }
 
     .logo {
@@ -784,6 +793,7 @@ h3,
         display: block;
         position: relative;
         z-index: 1001;
+        flex-shrink: 0;
     }
 
     .nav-links {
