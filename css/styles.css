@@ -649,6 +649,62 @@ h3,
     display: block;
 }
 
+/* Shared content width used throughout the website. */
+.section-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* Benefits section. */
+.benefits-section {
+    padding: 140px 0;
+    background-color: #111111;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.benefit-card {
+    min-height: 260px;
+    padding: 32px;
+
+    background-color: #1b1b1b;
+    border-top: 4px solid #b5121b;
+}
+
+.benefit-card h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    color: #d92b38;
+    font-size: 1.4rem;
+}
+
+.benefit-card p {
+    margin-bottom: 0;
+
+    color: #cfcfcf;
+    line-height: 1.7;
+}
+
+
+@media (max-width: 1000px) and (min-width: 701px) {
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .benefit-card {
+        min-height: 240px;
+    }
+
+}
+
 /* Mobile adjustments. */
 @media (max-width: 700px) {
     .navbar {
@@ -681,19 +737,57 @@ h3,
     .hero h1 {
         font-size: 3.3rem;
     }
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        width: 100%;
+
+   .benefits-section {
+    padding: 90px 0;
     }
+
+    .benefits-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 16px;
+
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 6px 0 20px;
+
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
 
     .benefit-card {
-        width: 100%;
-        min-width: 0;
+        flex: 0 0 85%;
+        width: 85%;
+        min-width: 85%;
+        min-height: 320px;
+
+        padding: 32px 28px;
+
+        background-color: #1b1b1b;
+        border-top: 4px solid #b5121b;
+
+        scroll-snap-align: start;
     }
 
+    .benefit-card h3 {
+        margin-top: 0;
+        margin-bottom: 18px;
 
-    .benefits-section {
-        padding: 72px 0;
+        color: #d92b38;
+        font-size: 1.5rem;
+    }
+
+    .benefit-card p {
+        margin-bottom: 0;
+
+        color: #cfcfcf;
+        font-size: 1rem;
+        line-height: 1.75;
     }
     
     .club-layout {
@@ -732,6 +826,28 @@ h3,
 
     .coach-image img {
         min-height: 380px;
+    }
+
+    .location-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    }
+
+    .location-arrow {
+        display: inline-block;
+        margin-left: 5px;
+        color: #b5121b;
+        font-size: 0.9em;
+        transition: transform 0.2s ease;
+    }
+
+    .location-link:hover {
+        color: #b5121b;
+    }
+
+    .location-link:hover .location-arrow {
+        transform: translate(2px, -2px);
     }
 
     .gallery-section {
@@ -860,73 +976,3 @@ h3,
     }
 }
 
-
-/* Shared content width used throughout the website. */
-.section-container {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-}
-
-/* Benefits section. */
-.benefits-section {
-    padding: 100px 0;
-    background-color: #111111;
-}
-
-.section-label {
-    margin: 0 0 12px;
-    color: #d92b38;
-    font-size: 0.95rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.benefits-section h2 {
-    max-width: 700px;
-    margin: 0;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.section-intro {
-    max-width: 700px;
-    margin: 24px 0 48px;
-    color: #7c7b7b;
-    font-size: 1.15rem;
-    line-height: 1.7;
-}
-
-.benefits-grid {
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 14px;
-
-    scroll-snap-type: x mandatory;
-    overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch;
-}
-
-.benefit-card {
-    flex: 0 0 82%;
-    min-width: 0;
-    scroll-snap-align: start;
-    padding: 28px;
-    background-color: #1b1b1b;
-    border-top: 4px solid #b5121b;
-}
-
-.benefit-card h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    color: #b5121b;
-}
-
-.benefit-card p {
-    margin-bottom: 0;
-    color: #cfcfcf;
-    line-height: 1.7;
-}
